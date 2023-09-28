@@ -1,0 +1,76 @@
+{
+    "build": {
+        "beforeBuildCommand": "",
+        "beforeDevCommand": "",
+        "devPath": "../src",
+        "distDir": "../src",
+        "withGlobalTauri": true
+    },
+    "package": {
+        "productName": "desk-copilot",
+        "version": "1.0.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "fs": {
+                "scope": [
+                    "$RESOURCE/*"
+                ]
+            },
+            "shell": {
+                "all": true,
+                "open": true,
+                "scope": [
+                    {
+                        "name": "bin/env/bin/pip",
+                        "sidecar": true
+                    },
+                    {
+                        "args": [
+                            "-c",
+                            "'import sys; print(sys.executable);import time; time.sleep(10000)'",
+                            {
+                                "validator": "\\S+"
+                            }
+                        ],
+                        "name": "bin/env/bin/python",
+                        "sidecar": true
+                    }
+                ],
+                "sidecar": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "externalBin": [
+                "bin/env/bin/python",
+                "bin/env/bin/pip"
+            ],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "gay.lk92.desk-copilot",
+            "resources": [
+                "bin/"
+            ],
+            "targets": "all"
+        },
+        "security": {
+            "csp": null
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 768,
+                "resizable": true,
+                "title": "DeskCopilot",
+                "width": 640
+            }
+        ]
+    }
+}
