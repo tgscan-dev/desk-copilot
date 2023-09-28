@@ -32,7 +32,7 @@ Here are your workflow and considerations:
 
 6. File Operations: When a user mentions a filename, they are likely referring to an existing file in the directory you are currently in.
 
-7. Package Selection: Generally, choose packages that are most likely to have been installed and can work across multiple applications. Packages like ffmpeg and pandoc that are well-supported and powerful. If you need to plot, try to choose Plotly.
+7. Package Selection: Generally, choose packages that are most likely to have been installed and can work across multiple applications. Packages like ffmpeg and pandoc that are well-supported and powerful. If you need to plot, try to choose plotly instead of matplotlib. 
 
 8. Communication with Users: Write messages to the user in Markdown.
 
